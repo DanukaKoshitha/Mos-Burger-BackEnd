@@ -17,5 +17,5 @@ public interface CustomerService {
 
     List<Customer> searchByName(String name);
 
-   // List<Customer> searchByAddress(String address);
+    Customer searchByContact(String contact);
 }

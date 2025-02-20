@@ -7,8 +7,6 @@ import org.example.reporsitory.CustomerReporsitory;
 import org.example.service.CustomerService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,16 +59,10 @@ public class CustomerServiceImpl implements CustomerService {
         });
         return customerList;
     }
-//
-//    @Override
-//    public List<Customer> searchByAddress(String address) {
-//        List<CustomerEntity> customerEntities = reporsitory.findByAddress();
-//        List<Customer> customerList = new ArrayList<>();
-//
-//        customerEntities.forEach(customerEntity -> {
-//            customerList.add(mapper.map(customerEntity, Customer.class));
-//        });
-//        return customerList;
-//    }
-//}
+
+    @Override
+    public Customer searchByContact(String contact) {
+        CustomerEntity customer = reporsitory.findByContact(contact);
+        return mapper.map(customer,Customer.class);
+    }
 }

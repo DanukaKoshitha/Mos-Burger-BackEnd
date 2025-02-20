@@ -9,5 +9,5 @@ public interface CustomerReporsitory extends JpaRepository<CustomerEntity,Intege
 
     List<CustomerEntity> findByName(String name);
 
-   // List<CustomerEntity> findByAddress();
+    CustomerEntity findByContact(String contact);
 }

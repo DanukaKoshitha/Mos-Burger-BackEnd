@@ -13,7 +13,7 @@ import java.util.List;
 @CrossOrigin
 
 public class CustomerController {
-   //  http://localhost:8080/customer/add-customer
+   //  http://localhost:8080/customer/add
 
     final CustomerService service;
 
@@ -32,7 +32,7 @@ public class CustomerController {
         service.deleteCustomers(id);
     }
 
-    @PutMapping("/update-customer")
+    @PutMapping("/update-customer/")
     public void updateCustomer(@RequestBody Customer customer){
         service.update(customer);
     }
@@ -47,8 +47,8 @@ public class CustomerController {
         return service.searchByName(name);
     }
 
-//    @GetMapping("/searchByAddress/{address}")
-//    public List<Customer> searchByAddress(@PathVariable String address){
-//        return service.searchByAddress(address);
-//    }
+    @GetMapping("/getElementByPhone/{contact}")
+    public Customer searchByContact(@PathVariable String contact){
+        return service.searchByContact(contact);
+    }
 }
